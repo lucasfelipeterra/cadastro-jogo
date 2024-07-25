@@ -11,7 +11,7 @@ const modelo = () => {
     const estudio = prompt("Qual o estudio do jogo? ");
     let sequencia = -1;
     if (listar()) {
-        sequencia = prompt("qual é a sequẽncia do jogo? Digite 0 se nao houver ");
+        sequencia = prompt("qual é a sequẽncia do jogo? Digite 0 se nao houver "); -1
     }
 
     if (nome != "" && ano_lancamento >= 1962 && ano_lancamento <= 2024 && duracao > 0 && preco == 0 && estudio != "" && ((sequencia >= -1 && sequencia < jogos.length) || jogos.length == 0)) {
@@ -32,7 +32,7 @@ const criar = () => {
     const jogo = modelo();
 
     if (jogo != undefined) {
-        jogos.push();
+        jogos.push(jogo);
         console.log("Jogo cadastrado com sucesso");
     }
 };
@@ -85,3 +85,9 @@ const remover = () => {
     }
 };
 
+module.exports = {
+    criar,
+    atualizar,
+    listar,
+    remover
+}
